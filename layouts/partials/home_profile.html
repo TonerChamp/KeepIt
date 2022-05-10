@@ -2,8 +2,8 @@
     {{ $cdn_url := .Scratch.Get "cdn_url" }}
     {{ with .Site.Params.avatar}}
     {{ $avatar := .}}
-   <div class="avatar">
-        <a href="/posts/"> <img src="{{ (printf "%s%s" $cdn_url $avatar)}}"> </a>
+    <div class="avatar">
+      <a href="/products/"> <img src="{{ (printf "%s%s" $cdn_url $avatar)}}"> </a>
     </div>
     {{ end }}
     {{ if or .Params.gravatar.Email (and .Site.Params.gravatar.Email (ne .Params.gravatar.Email false)) }}
@@ -18,6 +18,6 @@
     {{ end }}
     <div class="social-links">
       {{ partial "social.html" . }}
-  
+
     </div>
 </div>
