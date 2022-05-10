@@ -1,7 +1,12 @@
 <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+            {{ if not .IsHome }}
+                {{ $cdn_url := .Scratch.Get "cdn_url" }}
+                <div class="avatar">
+                    <a href="{{ .Site.BaseURL }}"> <img src="{{ $.Site.Params.avatar }}"> </a>
+                </div>
+            {{ end }}
         </div>
         <div class="menu navbar-right">
                 {{ $currentPage := . }}
@@ -20,9 +25,8 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-     
+
           <div class="menu" id="mobile-menu">
-                {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
                 <a class="menu-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
                 {{ end }}
