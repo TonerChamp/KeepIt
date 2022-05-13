@@ -20,3 +20,9 @@
     -webkit-box-shadow: none;
   }
 }
+
+.menu {
+  &:target {
+    display: block;
+  }
+}
