@@ -26,3 +26,15 @@
     display: block;
   }
 }
+
+.post-content {
+  padding-top: 2rem;
+
+  h2 {
+    padding-top: 2em !important;
+  }
+
+  h2::before, h3::before {
+    content: "" !important;
+  }
+}
