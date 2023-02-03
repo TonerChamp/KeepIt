@@ -2,3 +2,40 @@
 // Custom style
 // ==============================
 // You can override the variables in _variables.scss to customize the style
+
+.header-logo img {
+  height: 80px;
+}
+
+.intro .avatar {
+  padding: 0;
+
+  img {
+    width: 50%;
+    max-width: 337px;
+
+    border-radius: 0;
+    -webkit-border-radius: 0;
+
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+}
+
+.menu {
+  &:target {
+    display: block;
+  }
+}
+
+.post-content {
+  padding-top: 2rem;
+
+  h2 {
+    padding-top: 2em !important;
+  }
+
+  h2::before, h3::before {
+    content: "" !important;
+  }
+}
